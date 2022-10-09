@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/adde53-gh-pages/static/css/main.073c9b0a.css",
+    "main.js": "/adde53-gh-pages/static/js/main.2762cb8d.js",
+    "index.html": "/adde53-gh-pages/index.html",
+    "main.073c9b0a.css.map": "/adde53-gh-pages/static/css/main.073c9b0a.css.map",
+    "main.2762cb8d.js.map": "/adde53-gh-pages/static/js/main.2762cb8d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.2762cb8d.js"
+  ]
+}
