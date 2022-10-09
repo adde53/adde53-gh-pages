@@ -1,7 +1,7 @@
 {
   "name": "coding-exercise-frontend",
   "version": "0.1.0",
-  "homepage": "http://olssonandreas.se/",s
+  "homepage": "http://olssonandreas.se/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.4",
