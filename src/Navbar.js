@@ -29,7 +29,7 @@ export default function Navbar() {
   <Box sx={{ flexGrow: 1 }}>
   <AppBar position="static">
   		<Toolbar variant="dense">
-        <b color="inherit">Coding exercise</b>
+        <b color="inherit">Andreas Olsson</b>
         <Menu
                 id="demo-positioned-menu"
                 aria-labelledby="demo-positioned-button"
