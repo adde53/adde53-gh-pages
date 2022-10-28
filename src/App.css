@@ -36,3 +36,193 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+  margin: 20px;
+}
+
+ol, ul {
+  padding-left: 30px;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-info {
+  margin-left: 20px;
+}
+
+.button {
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 3px 2px;
+}
+
+
+
+
+/*.button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  font-size: 16px;
+  padding: 20px;
+  transition: all 0.5s;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 3px 2px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+*/
+.btn {
+  background-color: black;
+  border: none;
+  color: white;
+  width: 50px;
+  height: 50px;
+  transition: 0.3s;
+
+}
+
+.btn:hover {
+  background-color: white;
+  color: black;
+}
+.button1 {border-radius: 2px;}
+.button2 {border-radius: 4px;}
+.button3 {border-radius: 8px;}
+.button4 {border-radius: 12px;}
+.button5 {
+
+ position: fixed;
+ margin: -20px -50px;
+ top: 5%;
+ left: 95%;
+  border-radius: 100%;
+}
+
+.button6 {
+
+ position: fixed;
+ margin: -20px -50px;
+ top: 5%;
+ left: 50%;
+  border-radius: 100%;
+}
+
+
+li {
+  width: 100px;
+  height: 50px;
+  background: red;
+  transition: width 2s;
+}
+
+li:hover {
+  width: 300px;
+}
+
+.hide {
+  display: none;
+}
+
+.myDIV:hover + .hide {
+  display: block;
+  color: red;
+}
+
+.main {
+  text-align:center;
+}
+.test {
+  display:inline-block;
+}
+.addText {
+  display:inline-block; /* inline-block so we can set a width */
+  width:0;
+  white-space:nowrap; /* keep text one line */
+  direction:rtl; /* change direction so the text overflow on the left */
+  color: rgba(255,255,255,0);
+  transition: .5s;
+  transform: translateX(20px); /* put the value you want here */
+  pointer-events:none; /* to avoid the hover on the text, remove to see the difference */
+}
+
+.test:hover .addText {
+  color: blue;
+  transform: translateX(0);
+}
+
+h1 {
+  font-size: 40px;
+}

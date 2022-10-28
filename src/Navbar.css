@@ -1,0 +1,19 @@
+.navbarContainer {
+
+    position: fixed;
+    color: blue
+    background-color: blue;
+    top: 100;
+
+}
+
+.mainBlock {
+    width: calc(100vw - 200px);
+    left: 200px;
+    position: relative;
+}
+
+.sticky-nav {
+  position: sticky;
+  top: 0;
+}
