@@ -20,6 +20,9 @@ export default function Navbar() {
   const [age, setAge] = React.useState('');
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+  const [testing, setTesting] = React.useState(true);
+  const [stringWeather, setStringWeather] = React.useState("");
+  const [moreWeather, setMoreWeather] = React.useState("");
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -35,7 +38,40 @@ export default function Navbar() {
       isPaneOpen: false,
       isPaneOpenLeft: false,
     });
+/*
+    const options = {
+    	method: 'GET',
+    	headers: {
+    		'X-RapidAPI-Key': '23d8e9f025mshebcaf991b47288fp19343fjsnead419c1708d',
+    		'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
+    	}
+    };
 
+    fetch('https://weatherapi-com.p.rapidapi.com/future.json?q=London&dt=2022-12-25', options)
+    	.then(response => response.json())
+    	.then(response => console.log(response))
+    	.catch(err => console.error(err));
+*/
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '7b44d4e07bmshe4ed42cb744d1dep1e1759jsnd8396fc1cc77',
+            'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
+        }
+    };
+    if(testing){
+        fetch('https://weatherapi-com.p.rapidapi.com/current.json?q=Stockholm', options)
+            .then(response => response.json())//{(setStringWeather(response.json()))})
+            .then(response => {console.log(response)
+            setStringWeather(response.location.name + " "+ response.current.temp_c + "°C")
+            setMoreWeather("Humidity " + response.current.humidity + "%, Last updated "+
+            response.current.last_updated + ", Feels like: " + response.current.feelslike_c +
+                                                      "°C, Wind " + response.current.wind_kph +"km/h")
+            })
+            .catch(err => console.error(err));
+            setTesting(false);
+            //console.log(stringWeather)
+    }
   return (
   <Box sx={{ flexGrow: 1 }}>
 
@@ -62,6 +98,10 @@ export default function Navbar() {
        <b class="test">
          <b>Andreas Olsson</b>
          <b class="addText">23 år</b>
+       </b>
+       <b class="test5">
+           <b>{stringWeather}</b>
+           <b1 class="addText5">{moreWeather}</b1>
        </b>
        <SlidingPane
         width="200px"
@@ -101,6 +141,7 @@ export default function Navbar() {
     </Box>
   );
 }
+
 
 
 //<AppBar position="static" class="sticky-nav" color="inherit">

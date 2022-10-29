@@ -16,7 +16,26 @@
 }
 
 .test:hover .addText {
-  color: GhostWhite;
+  color: White;
+  transform: translateX(0);
+}
+
+.test5 {
+  display:inline-block;
+}
+.addText5 {
+  display:inline-block; /* inline-block so we can set a width */
+  width:0;
+  white-space:nowrap; /* keep text one line */
+  direction:ltr; /* change direction so the text overflow on the left */
+  color: rgba(255,255,255,0);
+  transition: .5s;
+  transform: translateX(20px); /* put the value you want here */
+  pointer-events:none; /* to avoid the hover on the text, remove to see the difference */
+}
+
+.test5:hover .addText5 {
+  color: White;
   transform: translateX(0);
 }
 
@@ -29,7 +48,10 @@ h2 {
 }
 
 b {
-  padding: 10px;
+  padding: 15px;
+}
+b1 {
+  padding: 15px;
 }
 
 .test2 {
@@ -48,7 +70,7 @@ b {
 }
 
 .test2:hover .addText {
-  color: GhostWhite;
+  color: White;
   transform: translateX(0);
 }
 
@@ -90,7 +112,7 @@ h5 {
 }
 
 .testAboutMe:hover .addTestAboutMe {
-  color: GhostWhite;
+  color: White;
   transform: translateX(0);
 }
 
