@@ -12,7 +12,7 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+body {background-color: Grey;}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -99,9 +99,6 @@ ol, ul {
   font-size: 16px;
   margin: 3px 2px;
 }
-
-
-
 
 /*.button {
   border-radius: 4px;
@@ -201,28 +198,11 @@ li:hover {
   color: red;
 }
 
-.main {
-  text-align:center;
-}
-.test {
-  display:inline-block;
-}
-.addText {
-  display:inline-block; /* inline-block so we can set a width */
-  width:0;
-  white-space:nowrap; /* keep text one line */
-  direction:rtl; /* change direction so the text overflow on the left */
-  color: rgba(255,255,255,0);
-  transition: .5s;
-  transform: translateX(20px); /* put the value you want here */
-  pointer-events:none; /* to avoid the hover on the text, remove to see the difference */
-}
-
-.test:hover .addText {
-  color: blue;
-  transform: translateX(0);
-}
 
 h1 {
   font-size: 40px;
+}
+
+h4 {
+  font-size: 20px;
 }
