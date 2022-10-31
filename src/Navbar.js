@@ -139,7 +139,7 @@ export default function Navbar() {
        </b>
        <b class="test5">
            <b3 contenteditable="true" handleClose={e => editTask(e.currentTarget.textContent)}
-           onKeyPress={(e) => { e.key === 'Enter' && editTask(e.currentTarget.textContent, e.preventDefault())}}>{stringLocation}
+           onKeyPress={(e) => { (e.key === 'Enter' || e.key === 'return') && editTask(e.currentTarget.textContent, e.preventDefault())}}>{stringLocation}
            </b3>
            <b3>{StringTemp}</b3>
            <b1 class="addText5">{moreWeather}</b1>
