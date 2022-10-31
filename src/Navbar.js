@@ -21,8 +21,9 @@ export default function Navbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const [testing, setTesting] = React.useState(true);
-  const [stringWeather, setStringWeather] = React.useState("");
+  const [StringTemp, setStringTemp] = React.useState("");
   const [moreWeather, setMoreWeather] = React.useState("");
+  const [stringLocation, setStringLocation] = React.useState("");
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -32,6 +33,27 @@ export default function Navbar() {
   const handleChange = (event) => {
     setAge(event.target.value);
     setAnchorEl(null);
+  };
+
+  const editTask = (event, e) => {
+    /*console.log(event)
+    var regex = "/,[0-9]+$/";
+    var test = event
+    test = test.replace(/[0-9]/g,"")
+    test = test.replace("°C","")
+    setStringTemp(test)*/
+    //console.log(test)
+    fetch('https://weatherapi-com.p.rapidapi.com/current.json?q='+event, options)
+        .then(response => response.json())//{(setStringTemp(response.json()))})
+        .then(response => {console.log(response)
+        setStringLocation(response.location.name+" ")
+        setStringTemp(response.current.temp_c + "°C")
+        setMoreWeather("Luftfuktighet " + response.current.humidity + "%, Senast uppdaterad "+
+        response.current.last_updated + ", Känns som: " + response.current.feelslike_c +
+                                                  "°C, Vind " + response.current.wind_kph +"km/h")
+        })
+        .catch(err => setTesting(true));
+    console.log("event")
   };
 
   const [state, setState] = useState({
@@ -59,19 +81,35 @@ export default function Navbar() {
             'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
         }
     };
+
     if(testing){
         fetch('https://weatherapi-com.p.rapidapi.com/current.json?q=Stockholm', options)
-            .then(response => response.json())//{(setStringWeather(response.json()))})
+            .then(response => response.json())//{(setStringTemp(response.json()))})
             .then(response => {console.log(response)
-            setStringWeather(response.location.name + " "+ response.current.temp_c + "°C")
-            setMoreWeather("Humidity " + response.current.humidity + "%, Last updated "+
-            response.current.last_updated + ", Feels like: " + response.current.feelslike_c +
-                                                      "°C, Wind " + response.current.wind_kph +"km/h")
+            setStringLocation(response.location.name+" ")
+            setStringTemp(response.current.temp_c + "°C")
+            setMoreWeather("Luftfuktighet " + response.current.humidity + "%, Senast uppdaterad "+
+            response.current.last_updated + ", Känns som: " + response.current.feelslike_c +
+                                                      "°C, Vind " + response.current.wind_kph +"km/h")
             })
             .catch(err => console.error(err));
             setTesting(false);
-            //console.log(stringWeather)
-    }
+            //console.log(StringTemp)
+    }/*contenteditable="true" handleClose={e => editTask(e.currentTarget.textContent)}*/
+
+    const handleKeyDown = (event) => {
+        fetch('https://weatherapi-com.p.rapidapi.com/current.json?q=Stockholm', options)
+            .then(response => response.json())//{(setStringTemp(response.json()))})
+            .then(response => {console.log(response)
+            setStringLocation(response.location.name+" ")
+            setStringTemp(response.current.temp_c + "°C")
+            setMoreWeather("Luftfuktighet " + response.current.humidity + "%, Senast uppdaterad "+
+            response.current.last_updated + ", Känns som: " + response.current.feelslike_c +
+                                                      "°C, Vind " + response.current.wind_kph +"km/h")
+            })
+            .catch(err => console.error(err));
+            setTesting(false);
+      }
   return (
   <Box sx={{ flexGrow: 1 }}>
 
@@ -100,7 +138,10 @@ export default function Navbar() {
          <b class="addText">23 år</b>
        </b>
        <b class="test5">
-           <b>{stringWeather}</b>
+           <b3 contenteditable="true" handleClose={e => editTask(e.currentTarget.textContent)}
+           onKeyPress={(e) => { e.key === 'Enter' && editTask(e.currentTarget.textContent, e.preventDefault())}}>{stringLocation}
+           </b3>
+           <b3>{StringTemp}</b3>
            <b1 class="addText5">{moreWeather}</b1>
        </b>
        <SlidingPane

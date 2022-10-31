@@ -39,6 +39,25 @@
   transform: translateX(0);
 }
 
+.buttonTest {
+  display:inline-block;
+}
+.addButtonTest {
+  display:inline-block; /* inline-block so we can set a width */
+  width:0;
+  white-space:nowrap; /* keep text one line */
+  direction:ltr; /* change direction so the text overflow on the left */
+  color: rgba(255,255,255,0);
+  transition: .5s;
+  transform: translateX(20px); /* put the value you want here */
+  pointer-events:none; /* to avoid the hover on the text, remove to see the difference */
+}
+
+.buttonTest:hover .addButtonTest {
+  color: White;
+  transform: translateX(0);
+}
+
 h1 {
   font-size: 40px;
 }
@@ -50,9 +69,15 @@ h2 {
 b {
   padding: 15px;
 }
+
 b1 {
   padding: 15px;
 }
+b3 {
+  padding: 5px;
+}
+
+
 
 .test2 {
   display:inline-block;
